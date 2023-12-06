@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>My League</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="creat">
+        <section class="container">
+          <h1>Tạo giải đấu cho bạn</h1>
+          <button class="creat--but" data-hover="click me!">
+            <div>Creat</div>
+          </button>
+
+          <p>
+            Facebook @
+            <a href="https://twitter.com/MadsBHaakansson">thanhduydinh</a>
+          </p>
+        </section>
+
+        <div class="creat--league">
+          <form
+            action=""
+            method="POST"
+            class="form"
+            id="form-1"
+            onsubmit="return false"
+          >
+            <h3 class="heading">
+              <img style="width: 28px" src="./img/trophy.png" alt="" />
+              Tạo giải
+              <img style="width: 28px" src="./img/trophy.png" alt="" />
+            </h3>
+            <div class="spacer"></div>
+
+            <!-- Nhập tên giải đấu  -->
+            <div class="form-group">
+              <label for="fullname" class="form-label">Tên giải đấu</label>
+              <input
+                id="tournament--name"
+                name="fullname"
+                type="text"
+                placeholder="VD: championleague"
+                class="form-control"
+              />
+              <span class="form-message"></span>
+            </div>
+
+            <!-- Chọn cách thức thi đấu -->
+            <div class="Tournament">
+              <h2>Hình thức thi đấu</h2>
+              <div class="switch-field">
+                <input
+                  type="radio"
+                  id="radio-one"
+                  name="switch-two"
+                  value="1"
+                />
+                <label for="radio-one">Loại trực tiếp</label>
+                <input
+                  type="radio"
+                  id="radio-two"
+                  name="switch-two"
+                  value="2"
+                />
+                <label for="radio-two">Đấu vòng tròn</label>
+                <input
+                  type="radio"
+                  id="radio-three"
+                  name="switch-two"
+                  value="3"
+                />
+                <label for="radio-three">Chia bảng đấu</label>
+              </div>
+            </div>
+
+            <!-- Nhập số đội tham gia  -->
+            <div class="form-group">
+              <label class="form-label">Số đội tham gia</label>
+              <input
+                id="teams"
+                class="form-control mask numeric required"
+                min="2"
+                max="30"
+                required=""
+                name="numCompetitors"
+                type="number"
+                value="2"
+                style="border-color: rgb(220, 228, 236)"
+              />
+              <span class="form-message"></span>
+            </div>
+
+            <!-- Nhập số đội vào vòng trong  -->
+            <div class="form-group team--in">
+              <label for="fullname" class="form-label"
+                >Số đội vào vòng trong</label
+              >
+              <input
+                id="team--in"
+                class="form-control mask numeric required"
+                min="1"
+                max="30"
+                required=""
+                name="numCompetitors"
+                type="number"
+                value="2"
+                style="border-color: rgb(220, 228, 236)"
+              />
+              <span class="form-message"></span>
+            </div>
+
+            <!-- Nhập số bảng đấu -->
+            <div class="form-group team--table">
+              <label for="fullname" class="form-label">Số bảng đấu</label>
+              <input
+                id="team--table"
+                class="form-control mask numeric required"
+                min="1"
+                max="30"
+                required=""
+                name="numCompetitors"
+                type="number"
+                value="2"
+                style="border-color: rgb(220, 228, 236)"
+              />
+              <span class="form-message"></span>
+            </div>
+
+            <!-- Cách thức tính điểm -->
+            <div class="team--point">
+              <label for="fullname" class="form-label">Cách tính điểm</label>
+              <div class="row wrap-group" id="intro-setup-point">
+                <div class="col-xs-4">
+                  <div class="form-group">
+                    <label for="win" class="control-label required"
+                      >Điểm thắng</label
+                    >
+                    <div>
+                      <input
+                        id="win"
+                        class="form-control"
+                        required=""
+                        name="pointForWin"
+                        type="number"
+                        value="3"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="form-group">
+                    <label for="draw" class="control-label required"
+                      >Điểm hòa</label
+                    >
+                    <div>
+                      <input
+                        id="draw"
+                        class="form-control"
+                        required=""
+                        name="pointForDraw"
+                        type="number"
+                        value="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="form-group">
+                    <label for="loss" class="control-label required"
+                      >Điểm thua</label
+                    >
+                    <div>
+                      <input
+                        id="lost"
+                        class="form-control"
+                        required=""
+                        name="pointForLoss"
+                        type="number"
+                        value="0"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="form-submit">Tạo</button>
+          </form>
+        </div>
+
+        <!-- Nhập tên người chơi  -->
+        <div class="creat--user">
+          <form
+            action=""
+            method="POST"
+            class="form-user1"
+            onsubmit="return false"
+          >
+            <h1 class="heading--user">Quản lý người chơi</h1>
+            <div class="spacer"></div>
+
+            <!-- Nhập tên người chơi  -->
+            <div class="form-user"></div>
+
+            <button class="form-submit1">Tạo</button>
+          </form>
+        </div>
+
+        <!-- Bảng Đấu  -->
+        <div class="operating">
+          <div class="name--league"></div>
+          <div class="result">
+            <div class="result--bxh"></div>
+            <div class="result--match"></div>
+          </div>
+
+          <div class="match--statisticalBK">
+            <h2>Bán Kết</h2>
+            <div class="statistical"></div>
+          </div>
+
+          <div class="match--statisticalCK">
+            <h2>Chung Kết</h2>
+            <div class="statisticalCK"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+    <script></script>
+  </body>
+</html>
